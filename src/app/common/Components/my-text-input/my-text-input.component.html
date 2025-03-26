@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <ng-content select="[input-header]"></ng-content>
+    </div>
+    <div>
+        <input type="text" [ngModel]="value" (input)="onInput($event)" [placeholder]="placeholder()" (blur)="onBlur()" />
+    </div>
+    <div>
+        <ng-content select="[input-errors]"></ng-content>
+    </div>
+</div>

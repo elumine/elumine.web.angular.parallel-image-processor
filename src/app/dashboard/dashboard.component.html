@@ -1,0 +1,54 @@
+<h1>Dashboard</h1>
+<app-breadcrumbs></app-breadcrumbs>
+<button (click)="logout()">Logout</button>
+<div>
+    <app-users></app-users>
+</div>
+<div>
+    <h2 #routeHeader>Route</h2>
+    data: {{ this.data }}
+    id: {{ this.id }}
+    query: {{ this.query }}
+</div>
+<div>
+    <h2>GraphQL Posts</h2>
+    @if (postsError) {
+        <p class="error">{{ postsError }}</p>
+    }
+    <ul>
+        @for ( post of posts; track $index ) {
+            <li>{{ post.title }}</li>
+        }
+    </ul>
+</div>
+<div>
+    <h2>Signals</h2>
+    <div [class.bold]="signals.c()">a: {{ signals.a() }}</div>
+    <div [ngClass]="{ bold: signals.c() }">b: {{ signals.b() }}</div>
+    <div [ngStyle]="{ color: signals.c() ? 'red' : '' }">c: {{ signals.c() }}</div>
+</div>
+<div>
+    <h2>Animations</h2>
+    <div [@a1]="a1 ? 's1' : 's2'">text</div>
+</div>
+<div>
+    <h2>Key Events</h2>
+    <input (keydown.code.shift.enter)="onKeyDown($event)" />
+</div>
+<div>
+    <h2>Defer</h2>
+    @defer (on hover) {
+        <p>Defer content</p>
+    } @placeholder(minimum 500ms) {
+        <p>Placeholder content</p>
+    }
+</div>
+<div>
+    <h2>Vars</h2>
+    @let a = 1;
+    a: {{ a }}
+</div>
+<div>
+    <h2>Async pipe</h2>
+    {{  asyncValue | async }}
+</div>

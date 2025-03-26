@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+            <app-my-text-input placeholder="Username" [formControl]="form.controls.username">
+                <div input-header>{{ 'Username' | uppercasepipe }}</div>
+            </app-my-text-input>
+            @if (form.controls.username.errors && form.controls.username.touched) {
+                <div class="errors">
+                    @if (form.controls.username.errors['minlength']) {
+                        <div class="error">Username must be at least 6 chars</div>
+                    }
+                    @if (form.controls.username.errors['required']) {
+                        <div class="error">Username is required</div>
+                    }
+                </div>
+            }
+        </div>
+        <div>
+            <app-my-text-input placeholder="Password" [formControl]="form.controls.password">
+                <div input-header>{{ 'Password' | uppercasepipe }}</div>
+                <div class="errors" input-errors>
+                    @if (form.controls.password.errors && form.controls.password.touched) {
+                        <div class="errors">
+                            @if (form.controls.password.errors['minlength']) {
+                                <div class="error">Password must be at least 6 chars</div>
+                            }
+                            @if (form.controls.password.errors['required']) {
+                                <div class="error">Password is required</div>
+                            }
+                        </div>
+                    }
+                </div>
+            </app-my-text-input>
+            
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+        <div class="status" [class.error]="loginStatus.isError">
+            {{ loginStatus.message }}
+        </div>
+    </form>
+</div>

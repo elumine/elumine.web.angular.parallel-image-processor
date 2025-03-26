@@ -1,0 +1,14 @@
+:host {
+    margin: 10px;
+    form {
+        padding: 10px;
+    }
+    .errors {
+        color: red;
+    }
+    .status {
+        &.error {
+            color: red;
+        }
+    }
+}

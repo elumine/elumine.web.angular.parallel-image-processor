@@ -1,0 +1,9 @@
+<div>
+    Breadcrumbs: 
+    @for (item of items; track $index) {
+        <span>{{ item }}</span>
+        @if (!$last) {
+            <span> / </span>
+        }
+    }
+</div>
