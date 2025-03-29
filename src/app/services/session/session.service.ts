@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Session } from './session';
+import { StorageService } from '../storage/storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
-
+  storage = inject(StorageService);
   session: Session;
 
   constructor() {
@@ -26,7 +27,7 @@ export class SessionService {
 
   private _load() {
     try {
-      const storage = JSON.parse(localStorage.getItem('session'));
+      const storage = this.storage.get('session');
       const { token } = storage;
       if (typeof token !== 'string') throw new Error('No token found in storage');
       this.session = { token: storage.token };
@@ -37,6 +38,6 @@ export class SessionService {
   }
 
   private _save() {
-    localStorage.setItem('session', JSON.stringify(this.session));
+    this.storage.set('session', this.session);
   }
 }

@@ -6,3 +6,21 @@ body {
     background: #222;
     color: #eee;
 }
+
+.create-button {
+    padding: 10px;
+    background: #0a0;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button {
+    padding: 10px;
+    background: #a00;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

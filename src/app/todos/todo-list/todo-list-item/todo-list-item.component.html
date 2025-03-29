@@ -1,0 +1,11 @@
+<div class="item-button">
+    <div>
+        <h2>
+            Item [ {{ item.id }} ] "{{ item.name }}"
+            <button class="delete-button" (click)="deleteItem()">- Delete</button>
+        </h2>
+    </div>
+    <div class="edit-form">
+        <div>Name: <input type="text" [ngModel]="item.name" (ngModelChange)="setListItemName($event)" /></div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
+import { TodosComponent } from './todos/todos.component';
 
 export const routes: Routes = [{
         path: '',
@@ -15,9 +16,16 @@ export const routes: Routes = [{
             path: 'login', component: LoginComponent
         }]
     }, {
-        path: 'dashboard/:id',
-        data: { data: 'data' },
+        path: 'todos',
         canActivate: [AuthGuard],
-        loadComponent: () => import('./dashboard/dashboard.component').then(c => c.DashboardComponent)
+        loadComponent: () => import('./todos/todos.component').then(c => c.TodosComponent),
+        children: [{
+            path: 'todos/:id',
+            component: TodosComponent,
+        }]
+    }, {
+        path: 'todos/:id',
+        canActivate: [AuthGuard],
+        component: TodosComponent
     }
 ];
