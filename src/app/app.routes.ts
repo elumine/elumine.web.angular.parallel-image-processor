@@ -3,7 +3,8 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
-import { TodosComponent } from './todos/todos.component';
+import { BoardsComponent } from './todos/boards.component';
+import { BoardViewComponent } from './todos/board-view/board-view.component';
 
 export const routes: Routes = [{
         path: '',
@@ -16,16 +17,12 @@ export const routes: Routes = [{
             path: 'login', component: LoginComponent
         }]
     }, {
-        path: 'todos',
+        path: 'boards',
         canActivate: [AuthGuard],
-        loadComponent: () => import('./todos/todos.component').then(c => c.TodosComponent),
-        children: [{
-            path: 'todos/:id',
-            component: TodosComponent,
-        }]
+        loadComponent: () => import('./todos/boards.component').then(c => c.BoardsComponent)
     }, {
-        path: 'todos/:id',
+        path: 'boards/:id',
         canActivate: [AuthGuard],
-        component: TodosComponent
+        loadComponent: () => import('./todos/board-view/board-view.component').then(c => c.BoardViewComponent)
     }
 ];

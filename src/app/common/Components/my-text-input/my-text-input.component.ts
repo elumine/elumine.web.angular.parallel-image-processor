@@ -1,9 +1,12 @@
 import { Component, Input, input } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-my-text-input',
-  imports: [FormsModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatIconModule],
   templateUrl: './my-text-input.component.html',
   styleUrl: './my-text-input.component.scss',
   providers: [{

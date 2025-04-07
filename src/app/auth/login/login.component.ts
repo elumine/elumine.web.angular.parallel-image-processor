@@ -5,11 +5,17 @@ import { AuthService } from '../../services/auth/auth.service';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
 import { UppercasePipe } from '../../common/pipes/uppercase/uppercase.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, MyTextInputComponent, UppercasePipe],
+  imports: [
+    ReactiveFormsModule, MyTextInputComponent, 
+    UppercasePipe, MatButtonModule, MatCardModule, MatRippleModule
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -51,7 +57,7 @@ export class LoginComponent {
             isError: false,
             message: 'Logged in!'
           };
-          this.router.navigate(['todos']);
+          this.router.navigate(['boards']);
         });
     }
   }

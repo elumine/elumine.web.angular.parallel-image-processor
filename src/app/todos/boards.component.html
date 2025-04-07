@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <span>Boards</span>
+    <button mat-fab (click)="createBoard()" class="mat-small-button create-button"
+        aria-label="Example icon button with a delete icon">
+        <mat-icon>add</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button (click)="logout()" mat-icon-button class="logout-icon" aria-label="icon-button with menu icon">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="board-section">
+    <mat-grid-list cols="4" rowHeight="2:1">
+        @for (list of todoBoardsArray(); track $index) {
+            <mat-grid-tile>
+                <a class="board-tile" routerLink="/boards/{{list.id}}">
+                    <div class="animation-wrapper">
+                        <div class="board-name">
+                            {{ list.name }}
+                        </div>
+                    </div>
+                </a>
+            </mat-grid-tile>
+        }
+    </mat-grid-list>
+</div>

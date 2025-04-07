@@ -1,10 +1,10 @@
 <div>
-    <div>
-        <ng-content select="[input-header]"></ng-content>
-    </div>
-    <div>
-        <input type="text" [ngModel]="value" (input)="onInput($event)" [placeholder]="placeholder()" (blur)="onBlur()" />
-    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>
+            <ng-content select="[input-header]"></ng-content>
+        </mat-label>
+        <input matInput type="text" [ngModel]="value" (input)="onInput($event)" [placeholder]="placeholder()" (blur)="onBlur()" />
+    </mat-form-field>
     <div>
         <ng-content select="[input-errors]"></ng-content>
     </div>

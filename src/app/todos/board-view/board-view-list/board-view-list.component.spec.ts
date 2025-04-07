@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodosComponent } from './todos.component';
+import { BoardViewListComponent } from './board-view-list.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('BoardViewListComponent', () => {
+  let component: BoardViewListComponent;
+  let fixture: ComponentFixture<BoardViewListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodosComponent]
+      imports: [BoardViewListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(BoardViewListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

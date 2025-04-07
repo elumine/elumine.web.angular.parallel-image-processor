@@ -1,7 +1,17 @@
 :host {
     margin: 10px;
+    .login-card {
+        margin: 100px 25vw;
+        display: block;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     form {
         padding: 10px;
+        display: flex;
+        flex-direction: column;
     }
     .errors {
         color: red;

@@ -12,6 +12,10 @@ export class StorageService {
   }
 
   get(key: string): any {
-    return JSON.parse(window.atob(localStorage.getItem(key)));
+    const data = localStorage.getItem(key);
+    if (data) {
+      return JSON.parse(window.atob(data));
+    }
+    return null;
   }
 }

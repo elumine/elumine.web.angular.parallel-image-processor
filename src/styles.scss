@@ -1,26 +1,14 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/rose-red.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {
-    background: #222;
-    color: #eee;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.create-button {
-    padding: 10px;
-    background: #0a0;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+h1, h2, h3 {
+    margin: 0;
 }
 
-.delete-button {
-    padding: 10px;
-    background: #a00;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.mat-small-button {
+    scale: 0.75;
 }
