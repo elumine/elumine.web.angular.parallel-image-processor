@@ -1,0 +1,23 @@
+<div class="status">
+    <div class="header row">Status</div>
+    <div class="scroll-wrapper">
+        <div>
+            @for (instance of instanceList(); track $index) {
+                <div class="row worker">
+                    <div class="name">
+                        Worker {{ $index + 1 }}
+                    </div>
+                    <div class="data">
+                        <div>
+                            <span class="key">Completed in: </span>
+                            <span class="value" [class]="instance.status == 'idle' ? 'green' : 'red'">
+                                {{ instance.lastExecutionDuration.toFixed(6) }}
+                            </span>
+                            ms
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

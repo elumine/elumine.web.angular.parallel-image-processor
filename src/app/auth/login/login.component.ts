@@ -57,7 +57,7 @@ export class LoginComponent {
             isError: false,
             message: 'Logged in!'
           };
-          this.router.navigate(['boards']);
+          this.router.navigate(['dashboard']);
         });
     }
   }

@@ -1,8 +1,23 @@
-:host {
-    .bold {
-        font-weight: bold;
+.dashboard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: #ccc;
+    background: #111;
+    mat-toolbar {
+        background: #171717;
+        color: #ccc;
+        .example-spacer {
+            flex: 1 1 auto;
+        }    
     }
-    .error {
-        color: red;
+    .content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        bottom: 0;
     }
 }

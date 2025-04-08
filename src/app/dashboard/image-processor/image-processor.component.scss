@@ -1,0 +1,34 @@
+.image-processor-ui {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    .image-view-panel {
+        position: absolute;
+        left: 175px;
+        right: 350px;
+        bottom: 0;
+        top: 0;
+        background: #111;
+        outline: 3px solid #000;
+    }
+    .effects-panel {
+        position: absolute;
+        width: 350px;
+        height: 100%;
+        right: 0px;
+        top: 0;
+        background: #222;
+        outline: 3px solid #000
+    }
+    .status-panel {
+        position: absolute;
+        width: 175px;
+        height: 100%;
+        left: 0px;
+        top: 0;
+        background: #222;
+        outline: 3px solid #000
+    }
+}

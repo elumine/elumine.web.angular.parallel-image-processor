@@ -1,0 +1,78 @@
+<div class="effect">
+    <form [formGroup]="form">
+        <div class="row first">
+            <div class="active box">
+                <mat-slide-toggle [formControl]="form.controls.active" (change)="onActiveChanged()"></mat-slide-toggle>
+            </div>
+            <div class="name box">
+                <mat-form-field class="example-full-width">
+                    <input matInput [formControl]="form.controls.name" (change)="onNameChanged()" type="text" />
+                </mat-form-field>
+            </div>
+            <div class="delete box">
+                <button mat-icon-button (click)="onDeleteClick()">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="row params">
+            <div class="weight box">
+                <span>Weight: </span>
+                <mat-slider min="1" max="100" step="1">
+                    <input matSliderThumb [formControl]="form.controls.weight" (change)="onWeightChanged()" />
+                </mat-slider>
+            </div>
+            @switch (effectType()) {
+                @case ('Tint') {
+                    <div>
+                        <div>
+                            <span>R: </span>
+                            <mat-slider min="0" max="1" step="0.1">
+                                <input matSliderThumb [formControl]="tintForm.controls.r" (change)="onTintFormChanged()" />
+                            </mat-slider>
+                        </div>
+                        <div>
+                            <span>G: </span>
+                            <mat-slider min="0" max="1" step="0.1">
+                                <input matSliderThumb [formControl]="tintForm.controls.g" (change)="onTintFormChanged()" />
+                            </mat-slider>
+                        </div>
+                        <div>
+                            <span>B: </span>
+                            <mat-slider min="0" max="1" step="0.1">
+                                <input matSliderThumb [formControl]="tintForm.controls.b" (change)="onTintFormChanged()" />
+                            </mat-slider>
+                        </div>
+                    </div>
+                } @case ('HueShiftImageEffect') {
+                    <div>
+                        <div>
+                            <span>Shift: </span>
+                            <mat-slider min="0" max="255" step="1">
+                                <input matSliderThumb [formControl]="hueShiftForm.controls.shift" (change)="onHueShiftFormChanged()" />
+                            </mat-slider>
+                        </div>
+                    </div>
+                } @case ('Desaturation') {
+                    <div>
+                        <div>
+                            <span>Desaturation: </span>
+                            <mat-slider min="0" max="1" step="0.1">
+                                <input matSliderThumb [formControl]="desaturationForm.controls.value" (change)="onDesaturationFormChanged()" />
+                            </mat-slider>
+                        </div>
+                    </div>
+                } @case ('Brightness') {
+                    <div>
+                        <div>
+                            <span>Brightness: </span>
+                            <mat-slider min="0" max="2" step="0.1">
+                                <input matSliderThumb [formControl]="brightnessForm.controls.value" (change)="onBrightnessFormChanged()" />
+                            </mat-slider>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </form>
+</div>

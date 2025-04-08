@@ -1,0 +1,29 @@
+<div class="effects">
+    <div class="header row">Effects. Total: {{effectsCount()}}. Active: {{activeEffectsCount()}} </div>
+    <div class="buttons row">
+        <div class="add-effect">
+            <form [formGroup]="addEffectForm">
+                <mat-form-field>
+                    <mat-label>Select new effect</mat-label>
+                    <mat-select [formControl]="addEffectForm.controls.effectType">
+                        @for (item of libraryEffectsList(); track $index) {
+                            <mat-option [value]="item">
+                                {{item}}
+                            </mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <button mat-fab [disabled]="addEffectForm.invalid" (click)="createEffect()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="effects row">
+        <div>
+            @for (item of effects(); track item.id) {
+                <app-effect-item [effect]="item" (onUpdate)="onEffectUpdate()"></app-effect-item>
+            }
+        </div>
+    </div>
+</div>

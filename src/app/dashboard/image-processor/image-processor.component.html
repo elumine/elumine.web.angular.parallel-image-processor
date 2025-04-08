@@ -1,0 +1,12 @@
+<div class="image-processor-ui">
+    <div class="image-view-panel">
+        <app-image-view [image]="image()"></app-image-view>
+    </div>
+    <div class="effects-panel">
+        <app-effects-panel></app-effects-panel>
+    </div>
+    <div class="status-panel">
+        <app-status-panel></app-status-panel>
+    </div>
+    <button (click)="onDownloadClick()">Download</button>
+</div>

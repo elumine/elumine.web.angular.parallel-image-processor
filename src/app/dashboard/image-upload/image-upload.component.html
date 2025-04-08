@@ -1,0 +1,11 @@
+<div class="image-upload" [class.drag]="dragOn">
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="header">UPLOAD IMAGE</div>
+            <div class="description">Select file or drop it here</div>
+        </div>
+    </div>
+    <input class="file-input" type="file"
+        (dragover)="setDrag(true)" (dragleave)="setDrag(false)"
+        (change)="fileChange($event)" />
+</div>
