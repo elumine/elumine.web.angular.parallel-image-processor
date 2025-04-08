@@ -4,11 +4,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './common/guards/auth.guard';
 
 export const routes: Routes = [
-    // {
-    //     path: '',
-    //     pathMatch: 'full',
-    //     redirectTo: '/auth/login'
-    // }, 
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/auth/login'
+    }, 
     {
         path: 'auth',
         component: AuthComponent,
