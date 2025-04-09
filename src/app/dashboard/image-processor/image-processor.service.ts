@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ImageEffect, ImageProcessor, ImageProcessorInstance } from './core/image-processor';
+import { ImageProcessor } from './core/image-processor';
 import { EffectsLibrary } from './core/effects-library';
+import { ImageProcessorInstance } from './core/image-processor-instance';
+import { ImageEffect } from './core/effects/image-effect';
 
 @Injectable({
   providedIn: 'root'

@@ -1,24 +1,71 @@
-:host {
-    margin: 10px;
-    .login-card {
-        margin: 100px 25vw;
-        display: block;
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    form {
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-    .errors {
-        color: red;
-    }
-    .status {
-        &.error {
-            color: red;
+.login-card {
+    margin: 100px 25vw;
+    display: block;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e1e;
+    color: #eee;
+    border: none;
+    box-shadow: 0 0 5px 1px #111;
+    padding: 20px 20px 10px 20px;
+
+    mat-card-header {
+        mat-card-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        mat-card-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-weight: normal;
+            a, a:visited {
+                color: var(--mat-sys-primary)
+            }
         }
     }
+    mat-card-actions {
+        form {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+    
+            .divider {
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .line {
+                    width: 75px;
+                    height: 1px;
+                    background: #444;
+                }
+                .text {
+                    color: #555;
+                }
+            }
+            .google-auth {
+                cursor: pointer;
+                border: 1px solid #333;
+                border-radius: 5px;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:hover {
+                    background: #222;
+                }
+                .google-icon {
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png);
+                    background-size: 100% 100%;
+                }
+            }
+        }
+    }
+
 }

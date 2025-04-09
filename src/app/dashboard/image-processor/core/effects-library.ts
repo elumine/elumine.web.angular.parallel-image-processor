@@ -1,4 +1,4 @@
-import { ImageEffect, InverseImageEffect } from "./image-processor";
+import { ImageEffect } from "./effects/image-effect";
 
 export class EffectsLibraryMetadata {
     effectsByName = new Map<string, typeof ImageEffect>();

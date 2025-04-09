@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService, LoginResponse } from '../../services/auth/auth.service';
+import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
+import { AuthService, RegistrationResponse } from '../../services/auth/auth.service';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
 import { UppercasePipe } from '../../common/pipes/uppercase/uppercase.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
-import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
 import { SnackService } from '../../services/snacks/snack.service';
 
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-registration',
   imports: [
     ReactiveFormsModule, MyTextInputComponent, 
     UppercasePipe, MatButtonModule, MatCardModule, MatRippleModule
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './registration.component.html',
+  styleUrl: './registration.component.scss'
 })
-export class LoginComponent {
+export class RegistrationComponent {
   form = new FormGroup({
     username: new FormControl('myemail@email.com', [
       Validators.minLength(6),
@@ -32,38 +32,25 @@ export class LoginComponent {
     ])
   });
 
+
   constructor(
     private router: Router,
     private authService: AuthService,
     private snack: SnackService) {}
 
-  login() {
+  async onSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form.value.username, this.form.value.password)
+      this.authService.register(this.form.value.username, this.form.value.password)
         .pipe(
           catchError((error) => {
-            this.snack.openSnackBar(`Login error. ${error.message}`);
+            this.snack.openSnackBar(`Registration error. ${error.message}`);
             return [];
           })
         )
-        .subscribe((user: LoginResponse) => {
-          this.snack.openSnackBar(`Login success`);
-          this.router.navigate(['dashboard']);
+        .subscribe((user: RegistrationResponse) => {
+          this.snack.openSnackBar(`Registration success`);
+          this.router.navigate(['auth/login']);
         });
     }
-  }
-
-  googleLogin() {
-    this.authService.loginGoogle()
-      .pipe(
-        catchError((error) => {
-          this.snack.openSnackBar(`Login error. ${error.message}`);
-          return [];
-        })
-      )
-      .subscribe((user: LoginResponse) => {
-        this.snack.openSnackBar(`Login success`);
-        this.router.navigate(['dashboard']);
-      });
   }
 }

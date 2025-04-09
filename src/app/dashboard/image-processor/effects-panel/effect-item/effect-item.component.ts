@@ -1,19 +1,23 @@
 import { Component, inject, input, output, signal } from '@angular/core';
-import { BrightnessImageEffect, DesaturationImageEffect, HueShiftImageEffect, ImageEffect, TintImageEffect } from '../../core/image-processor';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { ImageProcessorService } from '../../image-processor.service';
 import { EffectsLibrary } from '../../core/effects-library';
+import { TintImageEffect } from '../../core/effects/tint';
+import { HueShiftImageEffect } from '../../core/effects/hue-shift';
+import { DesaturationImageEffect } from '../../core/effects/desaturation';
+import { BrightnessImageEffect } from '../../core/effects/brightness';
+import { ImageEffect } from '../../core/effects/image-effect';
 
 @Component({
   selector: 'app-effect-item',
-  imports: [ ReactiveFormsModule, MatIconModule, MatButtonModule,
-    MatSlideToggleModule, MatInputModule, MatFormFieldModule, MatSliderModule ],
+  imports: [ReactiveFormsModule, MatIconModule, MatButtonModule,
+    MatSlideToggleModule, MatInputModule, MatFormFieldModule, MatSliderModule],
   templateUrl: './effect-item.component.html',
   styleUrl: './effect-item.component.scss'
 })
@@ -63,7 +67,7 @@ export class EffectItemComponent {
   }
 
   onWeightChanged() {
-    this.effect().weight = this.form.controls.weight.value/100;
+    this.effect().weight = this.form.controls.weight.value / 100;
     this.imageProcessorService.applyFilters();
     this.onUpdate.emit();
   }

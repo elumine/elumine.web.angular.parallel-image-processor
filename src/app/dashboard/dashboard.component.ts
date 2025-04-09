@@ -27,7 +27,8 @@ export class DashboardComponent {
   }
 
   logout() {
-    this.authService.logout();
+    this.authService.logout()
+      .subscribe();
   }
 
   onFileSelected(file: File) {

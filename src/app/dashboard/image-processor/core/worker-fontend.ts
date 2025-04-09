@@ -1,8 +1,9 @@
 import { BehaviorSubject, Subject } from "rxjs";
-import { ImageEffect, ImageProcessorCanvasData } from "./image-processor";
+import { ImageEffect } from "./effects/image-effect";
+import { ImageProcessorCanvasData } from "./image-processor-canvas";
 
 export class ImageProcessorWorkerThreadFrontend {
-    worker = new Worker(new URL('./worker.ts', import.meta.url));
+    worker = new Worker(new URL('./worker-backend.ts', import.meta.url));
     onJobExecutionFinished = new Subject<ImageProcessorWorkerThreadJobOutput>();
 
     constructor() {

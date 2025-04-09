@@ -1,10 +1,10 @@
-<mat-card class="login-card" appearance="outlined">
+<mat-card class="registration-card" appearance="outlined">
     <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-subtitle>Don't have an account? <a href="auth/registration">Register</a></mat-card-subtitle>
+        <mat-card-title>Registration</mat-card-title>
+        <mat-card-subtitle>Already registered? <a href="auth/login">Login</a></mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions>
-        <form [formGroup]="form" (ngSubmit)="login()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <app-my-text-input placeholder="Username" [formControl]="form.controls.username">
                 <div input-header>{{ 'Username' | uppercasepipe }}</div>
             </app-my-text-input>
@@ -33,15 +33,7 @@
                     }
                 </div>
             </app-my-text-input>
-            <button mat-button type="submit">LOGIN</button>
-            <div class="divider">
-                <span class="line"></span>
-                <span class="text">OR</span>
-                <span class="line"></span>
-            </div>
-            <div class="google-auth" (click)="googleLogin()">
-                <div class="google-icon"></div> Continue with Google
-            </div>
+            <button mat-button type="submit">REGISTER</button>
         </form>
     </mat-card-actions>
 </mat-card>

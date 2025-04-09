@@ -1,6 +1,10 @@
 import { EffectsLibrary } from "./effects-library";
-import { BrightnessImageEffect, DesaturationImageEffect, HueShiftImageEffect, InverseImageEffect, TintImageEffect } from "./image-processor";
-import { ImageProcessorWorkerThreadJobInput, ImageProcessorWorkerThreadJobOutput, WorkerThreadMessage, WorkerThreadMessageType } from "./worker-thread";
+import { BrightnessImageEffect } from "./effects/brightness";
+import { DesaturationImageEffect } from "./effects/desaturation";
+import { HueShiftImageEffect } from "./effects/hue-shift";
+import { InverseImageEffect } from "./effects/inverse";
+import { TintImageEffect } from "./effects/tint";
+import { ImageProcessorWorkerThreadJobInput, ImageProcessorWorkerThreadJobOutput, WorkerThreadMessage, WorkerThreadMessageType } from "./worker-fontend";
 
 
 EffectsLibrary.RegisterEffects([

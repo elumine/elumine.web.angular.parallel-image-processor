@@ -1,0 +1,44 @@
+.registration-card {
+    margin: 100px 25vw;
+    display: block;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e1e;
+    color: #eee;
+    border: none;
+    box-shadow: 0 0 5px 1px #111;
+    padding: 20px 20px 10px 20px;
+
+    mat-card-header {
+        mat-card-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        mat-card-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-weight: normal;
+            a, a:visited {
+                color: var(--mat-sys-primary)
+            }
+        }
+    }
+
+    form {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .errors {
+        color: red;
+    }
+    .status {
+        &.error {
+            color: red;
+        }
+    }
+}

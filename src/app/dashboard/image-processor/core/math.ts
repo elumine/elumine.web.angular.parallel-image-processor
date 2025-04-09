@@ -1,4 +1,4 @@
-import { Color } from "./image-processor";
+export type Color = { r: number, g: number, b: number, a: number };
 
 export function LerpFloat(a: number, b: number, weight: number) {
     return a + (b - a) * weight;
