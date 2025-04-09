@@ -5,9 +5,9 @@
     </mat-card-header>
     <mat-card-actions>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <app-my-text-input placeholder="Username" [formControl]="form.controls.username">
+            <app-text-input placeholder="Username" [formControl]="form.controls.username">
                 <div input-header>{{ 'Username' | uppercasepipe }}</div>
-            </app-my-text-input>
+            </app-text-input>
             @if (form.controls.username.errors && form.controls.username.touched) {
             <div class="errors">
                 @if (form.controls.username.errors['minlength']) {
@@ -18,21 +18,21 @@
                 }
             </div>
             }
-            <app-my-text-input placeholder="Password" [formControl]="form.controls.password">
+            <app-text-input placeholder="Password" [formControl]="form.controls.password">
                 <div input-header>{{ 'Password' | uppercasepipe }}</div>
-                <div class="errors" input-errors>
-                    @if (form.controls.password.errors && form.controls.password.touched) {
-                    <div class="errors">
-                        @if (form.controls.password.errors['minlength']) {
-                        <div class="error">Password must be at least 6 chars</div>
-                        }
-                        @if (form.controls.password.errors['required']) {
-                        <div class="error">Password is required</div>
-                        }
-                    </div>
+            </app-text-input>
+            <div class="errors" input-errors>
+                @if (form.controls.password.errors && form.controls.password.touched) {
+                <div class="errors">
+                    @if (form.controls.password.errors['minlength']) {
+                    <div class="error">Password must be at least 6 chars</div>
+                    }
+                    @if (form.controls.password.errors['required']) {
+                    <div class="error">Password is required</div>
                     }
                 </div>
-            </app-my-text-input>
+                }
+            </div>
             <button mat-button type="submit">REGISTER</button>
         </form>
     </mat-card-actions>

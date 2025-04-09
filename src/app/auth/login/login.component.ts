@@ -8,13 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { SnackService } from '../../services/snacks/snack.service';
-import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
+import { TextInputComponent } from '../../common/components/text-input/text-input.component';
 
 
 @Component({
   selector: 'app-login',
   imports: [
-    ReactiveFormsModule, MyTextInputComponent, 
+    ReactiveFormsModule, TextInputComponent, 
     UppercasePipe, MatButtonModule, MatCardModule, MatRippleModule
   ],
   templateUrl: './login.component.html',

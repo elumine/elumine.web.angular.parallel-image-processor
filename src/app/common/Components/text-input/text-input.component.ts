@@ -5,17 +5,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
 @Component({
-  selector: 'app-my-text-input',
+  selector: 'app-text-input',
   imports: [FormsModule, MatFormFieldModule, MatInputModule, MatIconModule],
-  templateUrl: './my-text-input.component.html',
-  styleUrl: './my-text-input.component.scss',
+  templateUrl: './text-input.component.html',
+  styleUrl: './text-input.component.scss',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: MyTextInputComponent,
+    useExisting: TextInputComponent,
     multi: true
   }]
 })
-export class MyTextInputComponent implements ControlValueAccessor {
+export class TextInputComponent implements ControlValueAccessor {
   value: string;
   isDisabled: boolean;
 
