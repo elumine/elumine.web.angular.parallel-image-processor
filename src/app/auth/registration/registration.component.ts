@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
 import { AuthService, RegistrationResponse } from '../../services/auth/auth.service';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
@@ -9,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { SnackService } from '../../services/snacks/snack.service';
+import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
 
 
 @Component({

@@ -7,8 +7,8 @@ import { UppercasePipe } from '../../common/pipes/uppercase/uppercase.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
-import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
 import { SnackService } from '../../services/snacks/snack.service';
+import { MyTextInputComponent } from '../../common/components/my-text-input/my-text-input.component';
 
 
 @Component({
